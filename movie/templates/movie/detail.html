@@ -1,0 +1,18 @@
+{% extends "movie/base.html" %}
+
+{% block bb %}
+
+    <h1>영화명: {{movie.title}}</h1>
+    <h2>영화명(영문): {{movie.title_en}}</h2>
+    <h4>누적 관객수: {{movie.audience}}</h4>
+    <h4>개봉일: {{movie.open_date}}</h4>
+    <h4>장르: {{movie.genre}}</h4>
+    <h4>관람등급: {{movie.watch_grade}}</h4>
+    <h4>평점: {{movie.score}}</h4>
+    <h4>포스터 이미지 URL: {{movie.poster_url}}</h4>
+    <p>영화소개: {{movie.description}}</p>
+    <a href="{% url 'movies:list' %}">목록</a>
+    <a href="{% url 'movies:form_update' movie.id %}">폼으로 수정</a>
+    <a href="{% url 'movies:model_form_update' movie.id %}">모델폼으로 수정</a>
+    
+{% endblock %}
